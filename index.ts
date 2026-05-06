@@ -11,8 +11,9 @@ app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
-// 静态文件 - 隐私政策
+// 静态文件
 app.use(express.static('public'));
+app.use('/static', express.static('static'));
 
 // 健康检查
 app.get('/api/v1/health', (req, res) => {
